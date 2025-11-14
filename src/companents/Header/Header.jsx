@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
+import rasim from "../Header/images/rasim.png"
+// import rasim from "../components/Header/rasim.png"; // Yo'lni to'g'riladim
 
 const SalomAssist = () => {
   const [language, setLanguage] = useState('uz');
@@ -17,15 +19,15 @@ const SalomAssist = () => {
       features: "Afzalliklar",
       contact: "Aloqa",
 
-      // Hero Section
+      // Hero Section - YANGILANDI
       heroTitle: "Salom Assist",
-      heroSubtitle: "2020 yildan tibbiy yordamingiz ishonchli hamkori",
-      heroDescription: "Tibbiy yordamni onlayn 24/7 oling. Shifokorlar maslahatlari, qabulga yozilish va boshqalar bitta ilovada",
-      support: "Qo'llab-quvvatlash",
+      heroSubtitle: "Hobby yoklarının onaylız-yıl olmıştır.",
+      heroDescription: "Biz bağıntızda tibbiy yordam xizmatlarini taklif etamiz",
+      support: "Qollab-quwatlash",
       servicesCount: "Xizmatlar",
       partners: "Hamkorlar",
       experience: "Yillik tajriba",
-      contactUs: "Biz bilan bog'laning",
+      contactUs: "Biz bilan bağılmıştır.",
 
       // About Section
       aboutTitle: "Kompaniya haqida",
@@ -92,10 +94,10 @@ const SalomAssist = () => {
       features: "Преимущества",
       contact: "Контакты",
 
-      // Hero Section
-      heroTitle: "Привет ассист",
-      heroSubtitle: "Ваш надежный партнер в медицинской помощи с 2020 года",
-      heroDescription: "Получите медицинскую помощь онлайн 24/7. Консультации врачей, запись на приём и многое другое в одном приложении",
+      // Hero Section - YANGILANDI
+      heroTitle: "Salom Assist",
+      heroSubtitle: "Ваш надежный партнер в медицинской помощи",
+      heroDescription: "Мы предлагаем полный спектр медицинских услуг",
       support: "Поддержка",
       servicesCount: "Услуг",
       partners: "Партнеров",
@@ -167,10 +169,10 @@ const SalomAssist = () => {
       features: "Features",
       contact: "Contact",
 
-      // Hero Section
-      heroTitle: "Hello Assist",
-      heroSubtitle: "Your reliable partner in medical care since 2020",
-      heroDescription: "Get medical help online 24/7. Doctor consultations, appointment booking and more in one app",
+      // Hero Section - YANGILANDI
+      heroTitle: "Salom Assist",
+      heroSubtitle: "Your reliable partner in medical care",
+      heroDescription: "We offer comprehensive medical assistance services",
       support: "Support",
       servicesCount: "Services",
       partners: "Partners",
@@ -408,35 +410,61 @@ const SalomAssist = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-container">
-          <h1>{t.heroTitle}</h1>
-          <p className="subtitle">{t.heroSubtitle}</p>
-          <p className="description">{t.heroDescription}</p>
+      {/* YANGI Hero Section */}
+      <section className="hero-new">
+        <div className="hero-new-container">
+          <div className="hero-content">
+            <h1>{t.heroTitle}</h1>
+            <p className="subtitle">{t.heroSubtitle}</p>
+            <p className="description">{t.heroDescription}</p>
 
-          <div className="stats">
-            <div className="stat-item">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">{t.support}</div>
+            {/* Statistika bloki - 2x2 tartibda */}
+            <div className="stats-grid">
+              <div className="stat-row">
+                <div className="stat-item-large">
+                  <div className="stat-number-large">24/7</div>
+                  <div className="stat-label-large">{t.support}</div>
+                </div>
+                <div className="stat-item-large">
+                  <div className="stat-number-large">100+</div>
+                  <div className="stat-label-large">{t.servicesCount}</div>
+                </div>
+              </div>
+              <div className="stat-row">
+                <div className="stat-item-large">
+                  <div className="stat-number-large">300+</div>
+                  <div className="stat-label-large">{t.partners}</div>
+                </div>
+                <div className="stat-item-large">
+                  <div className="stat-number-large">5+</div>
+                  <div className="stat-label-large">{t.experience}</div>
+                </div>
+              </div>
             </div>
-            <div className="stat-item">
-              <div className="stat-number">100+</div>
-              <div className="stat-label">{t.servicesCount}</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">300+</div>
-              <div className="stat-label">{t.partners}</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">5+</div>
-              <div className="stat-label">{t.experience}</div>
+
+            <button className="cta-button-new" onClick={() => scrollToSection('contact')}>
+              {t.contactUs}
+            </button>
+          </div>
+          
+          <div className="hero-image">
+            {/* Rasmni ko'rsatish */}
+            <img 
+              src={rasim} 
+              alt="APEXLIFE" 
+              className="hero-real-image"
+              onError={(e) => {
+                // Agar rasm yuklanmasa, placeholder ko'rsatish
+                e.target.style.display = 'none';
+                e.target.nextSibling.style.display = 'flex';
+              }}
+            />
+            
+            {/* Agar rasm bo'lmasa placeholder */}
+            <div className="red-image-placeholder" style={{display: 'none'}}>
+              <span className="image-text">APEXLIFE</span>
             </div>
           </div>
-
-          <button className="cta-button" onClick={() => scrollToSection('contact')}>
-            {t.contactUs}
-          </button>
         </div>
       </section>
 
