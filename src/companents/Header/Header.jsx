@@ -21,13 +21,13 @@ const SalomAssist = () => {
 
       // Hero Section - YANGILANDI
       heroTitle: "Salom Assist",
-      heroSubtitle: "Hobby yoklarının onaylız-yıl olmıştır.",
-      heroDescription: "Biz bağıntızda tibbiy yordam xizmatlarini taklif etamiz",
+      heroSubtitle:  "Hobbiylarga ishonchli xizmat ko'rsatamiz",
+      heroDescription: "Biz sizga yuqori sifatli tibbiy yordam xizmatlarini taklif etamiz",
       support: "Qollab-quwatlash",
       servicesCount: "Xizmatlar",
       partners: "Hamkorlar",
       experience: "Yillik tajriba",
-      contactUs: "Biz bilan bağılmıştır.",
+      contactUs: "Biz bilan bog'laning",
 
       // About Section
       aboutTitle: "Kompaniya haqida",
@@ -419,28 +419,28 @@ const SalomAssist = () => {
             <p className="description">{t.heroDescription}</p>
 
             {/* Statistika bloki - 2x2 tartibda */}
-            <div className="stats-grid">
-              <div className="stat-row">
-                <div className="stat-item-large">
-                  <div className="stat-number-large">24/7</div>
-                  <div className="stat-label-large">{t.support}</div>
+              <div className="stats-grid">
+                <div className="stat-row">
+                  <div className="stat-item-large">
+                    <div className="stat-number-large"></div>
+                    <div className="stat-label-large"></div>
+                  </div>
+                  <div className="stat-item-large">
+                    <div className="stat-number-large"></div>
+                    <div className="stat-label-large"></div>
+                  </div>
                 </div>
-                <div className="stat-item-large">
-                  <div className="stat-number-large">100+</div>
-                  <div className="stat-label-large">{t.servicesCount}</div>
+                <div className="stat-row">
+                  <div className="stat-item-large">
+                    <div className="stat-number-large"></div>
+                    <div className="stat-label-large"></div>
+                  </div>
+                  <div className="stat-item-large">
+                    <div className="stat-number-large"></div>
+                    <div className="stat-label-large"></div>
+                  </div>
                 </div>
               </div>
-              <div className="stat-row">
-                <div className="stat-item-large">
-                  <div className="stat-number-large">300+</div>
-                  <div className="stat-label-large">{t.partners}</div>
-                </div>
-                <div className="stat-item-large">
-                  <div className="stat-number-large">5+</div>
-                  <div className="stat-label-large">{t.experience}</div>
-                </div>
-              </div>
-            </div>
 
             <button className="cta-button-new" onClick={() => scrollToSection('contact')}>
               {t.contactUs}
@@ -626,7 +626,7 @@ const SalomAssist = () => {
         onClick={scrollToTop}
         aria-label="Back to top"
       >
-        ↑
+        
       </button>
     </div>
   );
